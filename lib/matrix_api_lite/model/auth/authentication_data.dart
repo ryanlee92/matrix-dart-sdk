@@ -25,17 +25,20 @@ class AuthenticationData {
   // Should be non-nullable according to the spec but this leads to this problem
   // https://github.com/matrix-org/matrix-doc/issues/3370
   String? type;
+  String? token;
   String? session;
 
-  AuthenticationData({this.type, this.session});
+  AuthenticationData({this.type, this.token, this.session});
 
   AuthenticationData.fromJson(Map<String, Object?> json)
       : type = json['type'] as String?,
-        session = json['session'] as String?;
+        session = json['session'] as String?,
+        token = json['token'] as String?;
 
   Map<String, Object?> toJson() {
     final data = <String, Object?>{};
     if (type != null) data['type'] = type;
+    if (token != null) data['token'] = token; 
     if (session != null) data['session'] = session;
     return data;
   }
