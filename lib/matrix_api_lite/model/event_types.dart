@@ -26,6 +26,7 @@
 abstract class EventTypes {
   // Room timeline and state event types
   static const String Message = 'm.room.message';
+  static const String Bridge = 'm.bridge';
   static const String Sticker = 'm.sticker';
   static const String Reaction = 'm.reaction';
   static const String Redaction = 'm.room.redaction';
